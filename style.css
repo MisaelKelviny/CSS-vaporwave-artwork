@@ -63,7 +63,8 @@
   width: 100%;
   opacity: 0.6;
   /* background: aqua; */
-  background-image: linear-gradient(#ff00bf 2px, transparent 2px), linear-gradient(to right, #ff00bf 2px, transparent 2px);
+  background-image: linear-gradient(#ff00bf 2px, transparent 2px),
+    linear-gradient(to right, #ff00bf 2px, transparent 2px);
   background-position: 23px 28px;
   background-size: 80px 46px;
   transform-style: preserve-3d;
@@ -81,7 +82,29 @@
   height: 40vh;
   position: absolute;
   top: 0px;
-  background-image: radial-gradient(circle at top, #2f0450 8%, transparent 46%), linear-gradient(to left, #f001b600 48%, #f200b7 50%, transparent 52%), linear-gradient(to top, #ff00bc 0%, #94177f 22%, transparent 65%);
+  background-image: radial-gradient(circle at top, #2f0450 8%, transparent 46%),
+    linear-gradient(to left, #f001b600 48%, #f200b7 50%, transparent 52%),
+    linear-gradient(to top, #ff00bc 0%, #94177f 22%, transparent 65%);
+  filter: brightness(1.3);
+}
+
+.mountain::after {
+  content: "";
+  width: 100%;
+  height: 25vh;
+  position: absolute;
+  top: 100%;
+  background-image: linear-gradient(
+    to top,
+    #ff00bc 0%,
+    #94177f 22%,
+    transparent 65%
+  );
+  filter: brightness(1.1);
+  perspective: 500px;
+  transform-style: preserve-3d;
+  transform: rotate(180deg);
+  opacity: 0.7;
 }
 
 .sun {
@@ -99,6 +122,17 @@
   bottom: 50%;
   display: flex;
   justify-content: center;
+  animation: carMove 1s alternate 1s infinite;
+}
+
+@keyframes carMove {
+  from {
+    bottom: 50%;
+  }
+
+  to {
+    bottom: 49.8%;
+  }
 }
 
 .car {
@@ -107,7 +141,7 @@
   background-color: transparent;
   position: absolute;
   top: 36%;
-  transform: scale(.8);
+  transform: scale(0.8);
   /* opacity: .6; */
 }
 
@@ -126,7 +160,7 @@
 }
 
 .parachoque::after {
-  content: '';
+  content: "";
   width: 96.5%;
   height: 41px;
   background: #ec03b2;
@@ -135,11 +169,12 @@
   bottom: 40%;
   left: 7px;
   z-index: 2;
-  box-shadow: inset 41px 0px 47px -45px #ff00bf, inset -41px 0px 47px -45px #ff00bf;
+  box-shadow: inset 41px 0px 47px -45px #ff00bf,
+    inset -41px 0px 47px -45px #ff00bf;
 }
 
 .parachoque::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 30%;
   position: absolute;
@@ -160,7 +195,7 @@
 }
 
 .placa::after {
-  content: 'LOVE';
+  content: "LOVE";
   font-size: 19px;
   color: blue;
   font-weight: bold;
@@ -186,25 +221,33 @@
 }
 
 .escape::after {
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   position: absolute;
   right: 10%;
   border-radius: 50%;
   box-shadow: 0px 0px 20px #03a9f4;
-  background-image: radial-gradient(circle at center, #03a9f4 14%, transparent 94%);
+  background-image: radial-gradient(
+    circle at center,
+    #03a9f4 14%,
+    transparent 94%
+  );
 }
 
 .escape::before {
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   position: absolute;
   left: 10%;
   border-radius: 50%;
   box-shadow: 0px 0px 20px #03a9f4;
-  background-image: radial-gradient(circle at center, #03a9f4 14%, transparent 94%);
+  background-image: radial-gradient(
+    circle at center,
+    #03a9f4 14%,
+    transparent 94%
+  );
 }
 
 .tire {
@@ -215,7 +258,7 @@
 }
 
 .tire::after {
-  content: '';
+  content: "";
   width: 15%;
   height: 19%;
   background: repeating-linear-gradient(to left, black, #fe00be 100px);
@@ -223,10 +266,11 @@
   left: 2%;
   bottom: 33%;
   border-radius: 23%;
+  animation: tireMove 1s alternate 2s infinite;
 }
 
 .tire::before {
-  content: '';
+  content: "";
   width: 15%;
   height: 19%;
   background: repeating-linear-gradient(to right, black, #fe00be 100px);
@@ -234,6 +278,21 @@
   right: 2%;
   bottom: 33%;
   border-radius: 23%;
+  animation: tireMove 1s alternate 2s infinite;
+}
+
+@keyframes tireMove {
+  0% {
+    bottom: 32%;
+  }
+
+  50% {
+    bottom: 33%;
+  }
+
+  100% {
+    bottom: 34%;
+  }
 }
 
 .capo {
@@ -246,9 +305,11 @@
   z-index: 5;
 }
 
-.capo::after {}
+.capo::after {
+}
 
-.capo::before {}
+.capo::before {
+}
 
 .window {
   width: 100%;
@@ -261,7 +322,7 @@
 }
 
 .window::after {
-  content: '';
+  content: "";
   width: 72%;
   height: 33%;
   background: black;
@@ -272,13 +333,17 @@
   box-shadow: 0px 2px 0px 3px #570141;
 }
 
-.backWindow {}
+.backWindow {
+}
 
-.backWindow::after {}
+.backWindow::after {
+}
 
-.backWindow::before {}
+.backWindow::before {
+}
 
-.window::before {}
+.window::before {
+}
 
 .retrovisor {
   width: 100%;
@@ -288,9 +353,11 @@
   left: 14%;
 }
 
-.retrovisor::after {}
+.retrovisor::after {
+}
 
-.retrovisor::before {}
+.retrovisor::before {
+}
 
 .left-retrovisor {
   width: 7%;
@@ -305,7 +372,7 @@
 }
 
 .left-retrovisor::before {
-  content: '';
+  content: "";
   width: 15%;
   height: 137%;
   position: absolute;
@@ -329,7 +396,7 @@
 }
 
 .right-retrovisor::before {
-  content: '';
+  content: "";
   width: 15%;
   height: 137%;
   position: absolute;
@@ -357,6 +424,7 @@
   background-color: #141414;
   transform-style: preserve-3d;
   transform: rotateX(45deg);
+  filter: blur(6px);
 }
 
 .carro {
@@ -366,8 +434,8 @@
   width: 100%;
   height: 100%;
   display: flex;
-  transform: scale(.5);
-  opacity: .4;
+  transform: scale(0.5);
+  opacity: 0.4;
   justify-content: center;
   align-items: center;
 }
@@ -381,7 +449,7 @@
 }
 
 .tire-up::before {
-  content: '';
+  content: "";
   width: 15%;
   background: #ff00bf;
   height: 156%;
@@ -394,7 +462,7 @@
 }
 
 .tire-up::after {
-  content: '';
+  content: "";
   width: 15%;
   background: #ff00bf;
   height: 156%;
@@ -424,7 +492,7 @@
 }
 
 .left-farol::after {
-  content: '';
+  content: "";
   width: 40%;
   height: 80%;
   border-radius: 50%;
@@ -437,7 +505,7 @@
 }
 
 .left-farol::before {
-  content: '';
+  content: "";
   width: 35%;
   height: 75%;
   border-radius: 50%;
@@ -460,7 +528,7 @@
 }
 
 .right-farol::after {
-  content: '';
+  content: "";
   width: 40%;
   height: 80%;
   border-radius: 50%;
@@ -469,11 +537,11 @@
   right: 6%;
   top: 12%;
   border: 2px solid #6f0655;
-  box-shadow: inset 5px 0px 10px #700454, 0px 0px 17px 18px #d18f0796;;
+  box-shadow: inset 5px 0px 10px #700454, 0px 0px 17px 18px #d18f0796;
 }
 
 .right-farol::before {
-  content: '';
+  content: "";
   width: 35%;
   height: 75%;
   border-radius: 50%;
@@ -483,4 +551,18 @@
   top: 12%;
   border: 2px solid #6f0655;
   box-shadow: inset 5px 0px 10px #700454, 0px 0px 17px 18px #c2026b96;
+}
+
+.credits {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: white;
+  font: bold;
+  font-family: monospace;
+  z-index: 99;
+
+  & > a {
+    color: yellow;
+  }
 }
