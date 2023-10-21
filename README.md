@@ -2,7 +2,6 @@
 A simple art created with pure-css and html. No SVG, No Image, Only CSS
 
 You can check on: [Css Vaporwave](https://misaelkelviny.github.io/CSS-vaporwave-artwork/)
-
-![image](https://user-images.githubusercontent.com/41343708/167490332-b5e697d9-c7b5-4add-a4ce-045fd64cfba9.png)
+![image](https://github.com/MisaelKelviny/CSS-vaporwave-artwork/assets/41343708/b578f60e-9c82-49c2-b2b4-931924968dce)
 
 Created By Misael Kelviny da Silva
