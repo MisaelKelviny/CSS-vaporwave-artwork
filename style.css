@@ -3,21 +3,79 @@
   padding: 0;
 }
 
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
 .container {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
   overflow: hidden;
+  height: 100%;
+  color: #a3c;
+  background-color: #000;
+}
+
+.sky {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(#214 75%, #249);
+  box-shadow: inset 0px -46px 16px -35px #a3c;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.sunContainer {
+  position: relative;
+  width: 40%;
+  margin-bottom: 20%;
+}
+
+.sun {
+  --glow-color: #d44;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-image: linear-gradient(#fcdf11, #ff623f, #fe2085 50%);
+  box-shadow: 0 0 160px 80px var(--glow-color);
+  animation: 1.2s ease infinite alternate sun-glow-anim;
 }
 
 .background {
   width: 100%;
-  /* top: 191px; */
+  top: 142px;
   height: 100%;
   perspective: 139px;
   transform: scaleX(4);
   overflow: hidden;
   position: relative;
-  background: #2f0450;
+  background: transparent;
+}
+
+@keyframes sun-glow-anim {
+  from {
+    box-shadow: 0 0 160px 80px var(--glow-color);
+  }
+  to {
+    box-shadow: 0 0 180px 95px var(--glow-color);
+  }
 }
 
 @keyframes run {
@@ -28,6 +86,109 @@
   100% {
     background-position: 0px 39px;
   }
+}
+
+.cityContainer {
+  position: absolute;
+  width: 50%;
+  margin-left: -1%;
+  animation: buildingMove 4s alternate 4s infinite;
+}
+
+.city {
+  padding-top: 20%;
+}
+
+@keyframes buildingMove {
+  from {
+    bottom: 0%;
+  }
+
+  to {
+    bottom: 0.8%;
+  }
+}
+
+.building {
+  position: absolute;
+  width: 5%;
+  height: 100%;
+  bottom: 0;
+  border-radius: 4px 4px 0 0;
+  background-image: linear-gradient(0deg, rgba(17, 17, 34, 0), #112 30px, #000);
+}
+.building:nth-child(odd) {
+  background-image: linear-gradient(0deg, rgba(24, 24, 42, 0), #223 30px, #000);
+}
+.antenna::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: calc(-1px - 5%);
+  bottom: 100%;
+  width: 10%;
+  min-width: 2px;
+  height: 33%;
+  background-color: #000;
+}
+
+.mountains {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  animation: buildingMove 4s alternate 4s infinite;
+}
+.mountain {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background-image: linear-gradient(#000 70%, #111 85%, #fff1);
+}
+.mountain-left {
+  left: 0;
+  clip-path: polygon(
+    0% 100%,
+    0% 55%,
+    5% 60%,
+    10% 55%,
+    20% 50%,
+    25% 42%,
+    30% 38%,
+    33% 35%,
+    40% 45%,
+    50% 50%,
+    60% 70%,
+    70% 85%,
+    75% 82%,
+    80% 91%,
+    85% 90%,
+    90% 95%,
+    95% 98%,
+    100% 100%
+  );
+}
+.mountain-right {
+  right: 0;
+  clip-path: polygon(
+    0% 100%,
+    5% 95%,
+    10% 85%,
+    15% 87%,
+    20% 80%,
+    25% 78%,
+    30% 65%,
+    40% 70%,
+    50% 57%,
+    60% 53%,
+    67% 68%,
+    70% 70%,
+    75% 66%,
+    80% 55%,
+    90% 50%,
+    95% 60%,
+    100% 57%,
+    100% 100%
+  );
 }
 
 .grid {
@@ -62,7 +223,6 @@
   height: 100%;
   width: 100%;
   opacity: 0.6;
-  /* background: aqua; */
   background-image: linear-gradient(#ff00bf 2px, transparent 2px),
     linear-gradient(to right, #ff00bf 2px, transparent 2px);
   background-position: 23px 28px;
@@ -77,36 +237,6 @@
   clip-path: polygon(27.9% 42.8%, 72.2% 42.8%, 67.4% 81%, 31.7% 82.5%);
 }
 
-.mountain {
-  width: 100%;
-  height: 40vh;
-  position: absolute;
-  top: 0px;
-  background-image: radial-gradient(circle at top, #2f0450 8%, transparent 46%),
-    linear-gradient(to left, #f001b600 48%, #f200b7 50%, transparent 52%),
-    linear-gradient(to top, #ff00bc 0%, #94177f 22%, transparent 65%);
-  filter: brightness(1.3);
-}
-
-.mountain::after {
-  content: "";
-  width: 100%;
-  height: 25vh;
-  position: absolute;
-  top: 100%;
-  background-image: linear-gradient(
-    to top,
-    #ff00bc 0%,
-    #94177f 22%,
-    transparent 65%
-  );
-  filter: brightness(1.1);
-  perspective: 500px;
-  transform-style: preserve-3d;
-  transform: rotate(180deg);
-  opacity: 0.7;
-}
-
 .sun {
   width: 100%;
   height: 50%;
@@ -117,9 +247,9 @@
 
 .carContainer {
   width: 100%;
-  height: 50%;
-  position: relative;
-  bottom: 50%;
+  height: 100%;
+  position: absolute;
+  bottom: 0%;
   display: flex;
   justify-content: center;
   animation: carMove 1s alternate 1s infinite;
@@ -140,7 +270,7 @@
   height: 200px;
   background-color: transparent;
   position: absolute;
-  top: 36%;
+  bottom: -45%;
   transform: scale(0.8);
   /* opacity: .6; */
 }
