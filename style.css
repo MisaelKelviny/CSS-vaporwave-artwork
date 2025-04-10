@@ -113,13 +113,16 @@ body {
   position: absolute;
   width: 5%;
   height: 100%;
+  padding: 2px;
   bottom: 0;
   border-radius: 4px 4px 0 0;
   background-image: linear-gradient(0deg, rgba(17, 17, 34, 0), #112 30px, #000);
 }
+
 .building:nth-child(odd) {
   background-image: linear-gradient(0deg, rgba(24, 24, 42, 0), #223 30px, #000);
 }
+
 .antenna::after {
   content: "";
   position: absolute;
@@ -252,7 +255,7 @@ body {
   bottom: 0%;
   display: flex;
   justify-content: center;
-  animation: carMove 1s alternate 1s infinite;
+  animation: carMove 2s infinite;
 }
 
 @keyframes carMove {
@@ -272,7 +275,6 @@ body {
   position: absolute;
   bottom: -45%;
   transform: scale(0.8);
-  /* opacity: .6; */
 }
 
 .parachoqueContainer {
